@@ -1,48 +1,50 @@
 require('colors');
-require('than');
-
 
 var generator = require("./generator")
 
 , colors = {
-  "num"   : "cyan",
-  "str"	  : "magenta",
-  "bool"  : "red",
-  "undef" : "grey",
-  "null"  : "grey",
-  "attr"  : "green",
-  "quot"  : "magenta",
-  "punc"  : "yellow",
-  "brack" : "yellow"
+    'num'   : 'cyan'
+  , 'str'	: 'magenta'
+  , 'bool'  : 'red'
+  , 'undef' : 'grey'
+  , 'null'  : 'grey'
+  , 'attr'  : 'green'
+  , 'quot'  : 'yellow'
+  , 'punc'  : 'yellow'
+  , 'brack' : 'yellow'
 }
 
 , level = {
-  "show"    : false,
-  "char"    : ".",
-  "color"   : "yellow",
-  "spaces"  : 4
+    'show'    : false
+  , 'char'    : '.'
+  , 'color'   : 'red'
+  , 'spaces'  : 2
 }
 
 , params = {
-  "colored" : true,
-  "async"   : false
+    'colored' : true
+  , 'async'   : false
+}
+
+, options = {
+    colors  : colors 
+  , level   : level
+  , params  : params
 }
 
 module.exports = (function (generator) {
   
-  function jsome(json, callBack) {
+  function jsome (json, callBack) {
     
     if(!jsome.params.async) {
-      console.log(generator.start(json));
-      return json;
-    }
-    
-    generator.start.than(json, function (data) {
-      console.log.than(data, function () {
-        callBack(json);
+      console.log(generator.gen(json));
+    } else {
+      setTimeout(function () {
+        console.log(generator.gen(json));
+        callBack && callBack();
       });
-    });
-    
+    }
+    return json;
   }
   
   jsome.colors  = colors;
@@ -51,4 +53,4 @@ module.exports = (function (generator) {
   
   return jsome;
   
-})(generator);
+})(generator.setOptions(options));
