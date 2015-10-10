@@ -83,7 +83,7 @@ If you need to disable the colors:
 When you have a very long json to display, don't make your code blocking... you can enable the asynchronous mode.
 
 ```javascript
-jsome.global.async = true;
+jsome.params.async = true;
 
 jsome(longJson, function () {
     /* Your code here */
