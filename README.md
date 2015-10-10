@@ -51,7 +51,7 @@ You can configure the colors of the displayed json by changing the values of the
 ```javascript
   jsome.colors = {
       'num'   : 'cyan'
-    , 'str'	: 'magenta'
+    , 'str'   : 'magenta'
     , 'bool'  : 'red'
     , 'undef' : 'grey'
     , 'null'  : 'grey'
@@ -83,11 +83,11 @@ If you need to disable the colors:
 When you have a very long json to display, don't make your code blocking... you can enable the asynchronous mode.
 
 ```javascript
-jsome.params.async = true;
+  jsome.params.async = true;
 
-jsome(longJson, function () {
-    /* Your code here */
-});
+  jsome(longJson, function () {
+      /* Your code here */
+  });
 ```
 
 The default value of `params` is:

@@ -1,10 +1,8 @@
 require('colors');
 
-var generator = require("./generator")
-
-, colors = {
+var colors = {
     'num'   : 'cyan'
-  , 'str'	: 'magenta'
+  , 'str'   : 'magenta'
   , 'bool'  : 'red'
   , 'undef' : 'grey'
   , 'null'  : 'grey'
@@ -32,6 +30,8 @@ var generator = require("./generator")
   , params  : params
 }
 
+, generator = require("./generator").setOptions(options);
+
 module.exports = (function (generator) {
   
   function jsome (json, callBack) {
@@ -57,4 +57,4 @@ module.exports = (function (generator) {
   
   return jsome;
   
-})(generator.setOptions(options));
+})(generator);

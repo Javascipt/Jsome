@@ -42,7 +42,6 @@ module.exports = (function () {
       levelStr = levelStr.replace(' ', options.params.colored ? opts.char[opts.color] : opts.char);
     }
     
-    
     return repeat(levelStr, level);
   }
   
