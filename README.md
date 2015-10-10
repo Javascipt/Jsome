@@ -1,17 +1,17 @@
-Make your JSON objects look AWESOME !!
+Make your JSON objects look AWESOME!
 ====================================
 
 ![Jsome](https://raw.githubusercontent.com/Javascipt/Jsome/master/logo.png)
 
 This package allows you to give style to your JSON on your console!
 
-##Installation :
+## Installation :
 
 ```bash
 $ npm install jsome
 ```
 
-##How does it work ?
+## How does it work ?
 
 on your nodejs application, when you need to console.log a json object, all you need to do is to use the jsome function
 
