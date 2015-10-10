@@ -47,6 +47,10 @@ module.exports = (function (generator) {
     return json;
   }
   
+  jsome.parse = function (jsonString, callBack) {
+    jsome(JSON.parse(jsonString), callBack);
+  }
+  
   jsome.colors  = colors;
   jsome.level   = level;
   jsome.params  = params;
