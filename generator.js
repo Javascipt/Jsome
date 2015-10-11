@@ -7,6 +7,7 @@ module.exports = (function () {
         '[object Number]'   : 'num'
       , '[object String]'   : 'str'
       , '[object Boolean]'  : 'bool'
+      , '[object RegExp]'   : 'regex'
       , '[object Function]' : 'func'
       , 'null'              : 'null'
       , 'undefined'         : 'undef'

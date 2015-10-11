@@ -2,6 +2,7 @@ var colors = {
     'num'   : 'cyan'
   , 'str'   : 'magenta'
   , 'bool'  : 'red'
+  , 'regex' : 'blue'
   , 'undef' : 'grey'
   , 'null'  : 'grey'
   , 'attr'  : 'green'

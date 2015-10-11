@@ -72,6 +72,7 @@ You can configure the colors of the displayed json by changing the values of the
       'num'   : 'cyan'    // stands for numbers
     , 'str'   : 'magenta' // stands for strings
     , 'bool'  : 'red'     // stands for booleans
+    , 'regex' : 'blue'    // stands for regular expressions
     , 'undef' : 'grey'    // stands for undefined
     , 'null'  : 'grey'    // stands for null
     , 'attr'  : 'green'   // objects attributes -> { attr : value }
