@@ -25,6 +25,25 @@ Here is the result :
 
 ![jsome](https://raw.githubusercontent.com/Javascipt/Jsome/master/examples/example1.png)
 
+The `jsome` function returns the object passed as argument so that when debugging, you can print the value of an object without having to change a lot on your code
+
+```javascript
+
+    // instead of 
+    
+    var foo = {
+      bar : obj
+    }
+    jsome (obj);
+    
+    // you can do this :
+    
+    var foo = {
+      bar : jsome(obj)
+    }
+    
+```
+
 You can add some points to show levels of elements... very helpful when you are dealing with complex json objects
 
 ```javascript
