@@ -35,7 +35,6 @@ var colors = {
 module.exports = (function (generator) {
   
   function jsome (json, callBack) {
-    
     if(!jsome.params.async) {
       console.log(generator.gen(json));
     } else {

@@ -20,7 +20,7 @@ module.exports = (function () {
     return (new Array(times + 1)).join(str);
   }
   
-  function clearObject (obj) {
+  function cleanObject (obj) {
     var lastKey = '';
     for(var key in obj) {
       (getType(obj[key])==='func') && delete obj[key] || (lastKey = key);
@@ -28,7 +28,7 @@ module.exports = (function () {
     return lastKey;
   }
   
-  function clearArray (arr) {
+  function cleanArray (arr) {
     return arr.filter(function (item) {
       return getType(item) !== 'func';
     });
@@ -78,7 +78,7 @@ module.exports = (function () {
       
       if (isObject(json)) {
         
-        var lastKey = clearObject(json);
+        var lastKey = cleanObject(json);
         colored.push(colorifySpec('{', 'brack', isChild ? 0 : level)); 
         level++;
         
@@ -93,7 +93,7 @@ module.exports = (function () {
         colored.push(colorifySpec('}', 'brack', --level));
         
       } else if(isArray(json)) {
-        json = clearArray(json);
+        json = cleanArray(json);
         
         if(hasChild(json)) {
           
