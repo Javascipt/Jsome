@@ -50,19 +50,19 @@ You can configure the colors of the displayed json by changing the values of the
 
 ```javascript
   jsome.colors = {
-      'num'   : 'cyan'
-    , 'str'   : 'magenta'
-    , 'bool'  : 'red'
-    , 'undef' : 'grey'
-    , 'null'  : 'grey'
-    , 'attr'  : 'green'
-    , 'quot'  : 'yellow'
-    , 'punc'  : 'yellow'
-    , 'brack' : 'yellow'
+      'num'   : 'cyan'    // stands for numbers
+    , 'str'   : 'magenta' // stands for strings
+    , 'bool'  : 'red'     // stands for booleans
+    , 'undef' : 'grey'    // stands for undefined
+    , 'null'  : 'grey'    // stands for null
+    , 'attr'  : 'green'   // objects attributes -> { attr : value }
+    , 'quot'  : 'yellow'  // strings quotes -> "..."
+    , 'punc'  : 'yellow'  // commas seperating arrays and objects values -> [ , , , ]
+    , 'brack' : 'yellow'  // for both {} and []
   }
 ```
 
-When you have a json as a string, instead of passing by JSON.parse function, you can just call the parse function of jsome
+When you have a json as a string, instead of passing by `JSON.parse` function, you can just call the parse function of jsome
 
 ```javascript
   jsome(JSON.parse('[1,2,3]'));
