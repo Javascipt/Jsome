@@ -107,7 +107,7 @@ module.exports = (function () {
           
         } else {
           
-          var coloredArray = colorifySpec('[', 'brack', level);
+          var coloredArray = colorifySpec('[', 'brack', isChild ? 0 : level);
           for(var key in json) {
             coloredArray += [
                 colorify(json[key])
@@ -119,7 +119,7 @@ module.exports = (function () {
         }
         
       } else {
-        return generateLevel(level) + colorify(json);
+        return generateLevel(isChild ? 0 : level) + colorify(json);
       }
       
       return colored.join('\n');
