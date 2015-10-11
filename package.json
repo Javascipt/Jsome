@@ -1,7 +1,7 @@
 {
   "name": "jsome",
-  "version": "2.0.6",
-  "description": "Make your JSONE look AWESOME!",
+  "version": "2.0.7",
+  "description": "Make your JSON look AWESOME!",
   "main": "script.js",
   "repository": {
     "type": "git",
