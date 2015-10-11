@@ -64,12 +64,21 @@ module.exports = (function () {
     var color = options.colors[getType(value)];
     return generateLevel(level) 
       + (getType(value) === 'str' ? colorifySpec('"', 'quot') : '')
-      + ( '' + value )[color]
+      + useColorProvider('' + value, color)
       + (getType(value) === 'str' ? colorifySpec('"', 'quot') : '');
   }
   
   function colorifySpec (char, type, level) {
-    return generateLevel(level) + char[options.colors[type]];
+    return generateLevel(level) + useColorProvider(char, options.colors[type]);
+  }
+  
+  function useColorProvider (str, color) {
+    /* preparing for the use of Chalk over Colors module */
+    if(options.params.colored) {
+      return str[color];
+    } else {
+      return str;
+    }
   }
   
   return {

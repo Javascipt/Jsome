@@ -35,16 +35,11 @@ var colors = {
 module.exports = (function (generator) {
   
   function jsome (json, callBack) {
-    var colorsOldState = colors.enabled;
-        colors.enabled = options.params.colored;
-    
     if(!jsome.params.async) {
       console.log(generator.gen(json));
-      colors.enabled = colorsOldState;
     } else {
       setTimeout(function () {
         console.log(generator.gen(json));
-        colors.enabled = colorsOldState;
         callBack && callBack();
       });
     }
