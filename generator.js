@@ -39,7 +39,7 @@ module.exports = (function () {
       , opts = options.level;
     
     if(options.level.show && levelStr.length) {
-      levelStr = levelStr.replace(' ', options.params.colored ? opts.char[opts.color] : opts.char);
+      levelStr = levelStr.replace(' ', opts.char[opts.color]);
     }
     
     return repeat(levelStr, level);
@@ -62,13 +62,13 @@ module.exports = (function () {
   function colorify (value, level) {
     var color = options.colors[getType(value)];
     return generateLevel(level) 
-      + (getType(value) === 'str' ? (options.params.colored ? colorifySpec('"', 'quot') : '"') : '')
-      + (options.params.colored ? (( '' + value )[color]) : ('' + value))
-      + (getType(value) === 'str' ? (options.params.colored ? colorifySpec('"', 'quot') : '"') : '');
+      + (getType(value) === 'str' ? colorifySpec('"', 'quot') : '')
+      + ( '' + value )[color]
+      + (getType(value) === 'str' ? colorifySpec('"', 'quot') : '');
   }
   
   function colorifySpec (char, type, level) {
-    return generateLevel(level) + (options.params.colored ? char[options.colors[type]] : char);
+    return generateLevel(level) + char[options.colors[type]];
   }
   
   return {

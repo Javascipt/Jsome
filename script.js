@@ -1,5 +1,3 @@
-require('colors');
-
 var colors = {
     'num'   : 'cyan'
   , 'str'   : 'magenta'
@@ -30,19 +28,26 @@ var colors = {
   , params  : params
 }
 
+, colors    = require('colors')
 , generator = require("./generator").setOptions(options);
 
 module.exports = (function (generator) {
   
   function jsome (json, callBack) {
+    var colorsOldState = colors.enabled;
+        colors.enabled = options.params.colored;
+    
     if(!jsome.params.async) {
       console.log(generator.gen(json));
+      colors.enabled = colorsOldState;
     } else {
       setTimeout(function () {
         console.log(generator.gen(json));
+        colors.enabled = colorsOldState;
         callBack && callBack();
       });
     }
+    
     return json;
   }
   
