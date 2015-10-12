@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Javascipt/Jsome#readme",
   "dependencies": {
+    "chalk": "^1.1.1",
     "colors": "^1.1.2"
   }
 }

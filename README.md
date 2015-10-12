@@ -82,6 +82,19 @@ You can configure the colors of the displayed json by changing the values of the
   }
 ```
 
+You can not only use the color value as string but also you can use an array to specify the background color or you can make things look bold  ( [see colors package for more details](http://npmjs.org/package/colors) )
+
+
+```javascript
+  jsome.colors.bool  = ['green' , 'bgRed']
+  jsome.colors.attr  = ['green' , 'bold']
+  jsome.colors.quot  = ['yellow', 'bold']
+  jsome.colors.punc  = ['yellow', 'bold']
+  jsome.colors.brack = ['yellow', 'bold']
+```
+![jsome](https://raw.githubusercontent.com/Javascipt/Jsome/master/examples/example3.png)
+
+
 When you have a json as a string, instead of passing by `JSON.parse` function, you can just call the parse function of jsome
 
 ```javascript

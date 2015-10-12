@@ -69,13 +69,17 @@ module.exports = (function () {
   }
   
   function colorifySpec (char, type, level) {
-    return generateLevel(level) + useColorProvider(char, options.colors[type]);
+    return generateLevel(level) + useColorProvider('' + char, options.colors[type]);
   }
   
   function useColorProvider (str, color) {
     /* preparing for the use of Chalk over Colors module */
     if(options.params.colored) {
-      return str[color];
+      if(!getType(color) && color.length > 1) {
+        return useColorProvider(str[color[0]], color.slice(1))
+      } else {
+        return str[getType(color) ? color : color[0]];
+      }
     } else {
       return str;
     }
