@@ -1,6 +1,5 @@
-var options;
-
 module.exports = (function () {
+  var options;
 
   function getType (value) {
     var map = {
@@ -17,8 +16,7 @@ module.exports = (function () {
   }
   
   function repeat (str, times) {
-    times = times || -1;
-    return Array(times + 1).join(str);
+    return Array(times ? (times+1) : 0).join(str);
   }
   
   function cleanObject (obj) {
@@ -37,7 +35,7 @@ module.exports = (function () {
   
   function generateLevel (level) {
     var levelStr  = repeat(' ', options.level.spaces)
-      , opts = options.level;
+      , opts      = options.level;
     
     if(options.level.show && levelStr.length) {
       levelStr = levelStr.replace(' ', opts.char[opts.color]);
