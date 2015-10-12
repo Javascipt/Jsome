@@ -29,7 +29,6 @@ var colors = {
   , params  : params
 }
 
-, colorsModule  = require('colors')
 , generator     = require("./generator").setOptions(options);
 
 module.exports = (function (generator) {

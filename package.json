@@ -1,6 +1,6 @@
 {
   "name": "jsome",
-  "version": "2.1.3",
+  "version": "2.2.0",
   "description": "Make your JSON look AWESOME!",
   "main": "script.js",
   "repository": {
@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/Javascipt/Jsome#readme",
   "dependencies": {
-    "chalk": "^1.1.1",
-    "colors": "^1.1.2"
+    "chalk": "^1.1.1"
   }
 }

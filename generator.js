@@ -18,7 +18,7 @@ module.exports = (function () {
   
   function repeat (str, times) {
     times = times || -1;
-    return (new Array(times + 1)).join(str);
+    return Array(times + 1).join(str);
   }
   
   function cleanObject (obj) {
@@ -73,12 +73,13 @@ module.exports = (function () {
   }
   
   function useColorProvider (str, color) {
-    /* preparing for the use of Chalk over Colors module */
+    /* @ todo : not too clear, need to write a meaningful code instead */
     if(options.params.colored) {
+      var chalk = require('chalk');
       if(!getType(color) && color.length > 1) {
-        return useColorProvider(str[color[0]], color.slice(1))
+        return useColorProvider(chalk[color[0]](str), color.slice(1))
       } else {
-        return str[getType(color) ? color : color[0]];
+        return chalk[getType(color) ? color : color[0]](str);
       }
     } else {
       return str;
