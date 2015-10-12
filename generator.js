@@ -73,17 +73,15 @@ module.exports = (function () {
   }
   
   function useColorProvider (str, color) {
-    /* @ todo : not too clear, need to write a meaningful code instead */
     if(options.params.colored) {
       var chalk = require('chalk');
-      if(!getType(color) && color.length > 1) {
+      if(isArray(color) && color.length > 1) {
         return useColorProvider(chalk[color[0]](str), color.slice(1))
       } else {
-        return chalk[getType(color) ? color : color[0]](str);
+        return chalk[isArray(color) ? color[0] : color](str);
       }
-    } else {
-      return str;
     }
+    return str;
   }
   
   return {
