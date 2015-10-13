@@ -64,7 +64,7 @@ The object `jsome.level` has as default value the following json :
   }
 ```
 
-You can change the level char, its color ( [see colors package](http://npmjs.org/package/colors) ) and the number of spaces for each level.
+You can change the level char, its color ( [see chalk package](http://npmjs.org/package/chalk) ) and the number of spaces for each level.
 
 You can also display your json starting from a specific level to avoid displaying your json starting from the extreme left. You can do that by changing the value `jsome.level.start`.
 
@@ -85,7 +85,7 @@ You can configure the colors of the displayed json by changing the values of the
   }
 ```
 
-You can not only use the color value as string but also you can use an array to specify the background color or you can make things look bold  ( [see colors package for more details](http://npmjs.org/package/colors) )
+You can not only use the color value as string but also you can use an array to specify the background color or you can make things look bold  ( [see chalk package for more details](http://npmjs.org/package/chalk) )
 
 
 ```javascript
