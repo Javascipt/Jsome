@@ -21,7 +21,7 @@ module.exports = (function () {
   
   function cleanObject (obj) {
     var lastKey = '';
-    for(var key in obj) {
+    for (var key in obj) {
       (getType(obj[key])==='func') && delete obj[key] || (lastKey = key);
     }
     return lastKey;
@@ -37,7 +37,7 @@ module.exports = (function () {
     var levelStr  = repeat(' ', options.level.spaces)
       , opts      = options.level;
     
-    if(options.level.show && levelStr.length) {
+    if (options.level.show && levelStr.length) {
       levelStr = levelStr.replace(' ', opts.char[opts.color]);
     }
     
@@ -45,8 +45,8 @@ module.exports = (function () {
   }
   
   function hasChild (obj) {
-    for(var key in obj) {
-      if(isArray(obj[key]) || isObject(obj[key])) return true;
+    for (var key in obj) {
+      if (isArray(obj[key]) || isObject(obj[key])) return true;
     }
   }
   
@@ -71,9 +71,9 @@ module.exports = (function () {
   }
   
   function useColorProvider (str, color) {
-    if(options.params.colored) {
+    if (options.params.colored) {
       var chalk = require('chalk');
-      if(isArray(color) && color.length > 1) {
+      if (isArray(color) && color.length > 1) {
         return useColorProvider(chalk[color[0]](str), color.slice(1))
       } else {
         return chalk[isArray(color) ? color[0] : color](str);
@@ -103,10 +103,10 @@ module.exports = (function () {
         
         colored.push(colorifySpec('}', 'brack', --level));
         
-      } else if(isArray(json)) {
+      } else if (isArray(json)) {
         json = cleanArray(json);
         
-        if(hasChild(json)) {
+        if (hasChild(json)) {
           
           var result = json.map(function(item) {
             return this.gen(item, level+1);
@@ -119,11 +119,8 @@ module.exports = (function () {
         } else {
           
           var coloredArray = colorifySpec('[', 'brack', isChild ? 0 : level);
-          for(var key in json) {
-            coloredArray += [
-                colorify(json[key])
-              , json.length-1>key ? colorifySpec(', ', 'punc') : ''
-            ].join('');
+          for (var key in json) {
+            coloredArray += colorify(json[key]) + (json.length-1>key ? colorifySpec(', ', 'punc') : '');
           }
           colored.push(coloredArray + colorifySpec(']', 'brack'));
           
