@@ -48,7 +48,7 @@ module.exports = (function (generator) {
   }
   
   jsome.parse = function (jsonString, callBack) {
-    jsome(JSON.parse(jsonString), callBack);
+    return jsome(JSON.parse(jsonString), callBack);
   }
   
   jsome.colors  = colors;
