@@ -5,6 +5,9 @@ Make your JSON objects look AWESOME!
 
 This package allows you to give style to your JSON on your console!
 
+
+![Downloads stats](https://nodei.co/npm/jsome.png?downloadRank=true)
+
 ## Installation :
 
 ```bash
