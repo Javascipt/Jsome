@@ -16,6 +16,7 @@ var colors = {
   , 'char'    : '.'
   , 'color'   : 'red'
   , 'spaces'  : 2
+  , 'start'   : 2
 }
 
 , params = {
@@ -35,10 +36,10 @@ module.exports = (function (generator) {
   
   function jsome (json, callBack) {
     if(!jsome.params.async) {
-      console.log(generator.gen(json));
+      console.log(generator.gen(json, options.level.start));
     } else {
       setTimeout(function () {
-        console.log(generator.gen(json));
+        console.log(generator.gen(json, options.level.start));
         callBack && callBack();
       });
     }
