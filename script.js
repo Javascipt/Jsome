@@ -16,7 +16,7 @@ var colors = {
   , 'char'    : '.'
   , 'color'   : 'red'
   , 'spaces'  : 2
-  , 'start'   : 2
+  , 'start'   : 0
 }
 
 , params = {

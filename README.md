@@ -11,7 +11,14 @@ This package allows you to give style to your JSON on your console!
 ## Installation :
 
 ```bash
-$ npm install jsome
+  $ npm install jsome
+```
+
+if you need to use jsome as a command line, you may need to instal it globally
+
+```bash
+  $ [sudo] npm install -g jsome
+  $ jsome /path/to/your/json/file.json
 ```
 
 ## How does it work ?

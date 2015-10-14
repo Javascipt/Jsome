@@ -1,6 +1,6 @@
 {
   "name": "jsome",
-  "version": "2.2.8",
+  "version": "2.3.0",
   "description": "Make your JSON look AWESOME!",
   "main": "script.js",
   "repository": {
@@ -14,7 +14,10 @@
     "log",
     "format",
     "pretty",
-    "print"
+    "print",
+    "command-line",
+    "command",
+    "cli"
   ],
   "author": "Khalid REHIOUI <Array.prototype@gmail.com> (http://github.com/javascipt)",
   "license": "MIT",
@@ -24,5 +27,8 @@
   "homepage": "https://github.com/Javascipt/Jsome#readme",
   "dependencies": {
     "chalk": "^1.1.1"
+  },
+  "bin" : {
+    "jsome" : "./bin/cli.js"
   }
 }
