@@ -1,6 +1,6 @@
 {
   "name": "jsome",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Make your JSON look AWESOME!",
   "main": "script.js",
   "repository": {
@@ -28,7 +28,7 @@
   "dependencies": {
     "chalk": "^1.1.1"
   },
-  "bin" : {
-    "jsome" : "./bin/cli.js"
+  "bin": {
+    "jsome": "./bin/cli.js"
   }
 }
