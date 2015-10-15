@@ -1,12 +1,11 @@
 Make your JSON objects look AWESOME!
 ====================================
 
+![Downloads stats](https://nodei.co/npm/jsome.png?downloadRank=true&stars=true)
+
 ![Jsome](https://raw.githubusercontent.com/Javascipt/Jsome/master/logo.png)
 
 This package allows you to give style to your JSON on your console!
-
-
-![Downloads stats](https://nodei.co/npm/jsome.png?downloadRank=true&stars=true)
 
 ## Installation :
 
