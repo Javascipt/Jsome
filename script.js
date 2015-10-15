@@ -30,7 +30,7 @@ var colors = {
   , params  : params
 }
 
-, generator = require("./generator").setOptions(options);
+, generator = require("./lib/generator").setOptions(options);
 
 module.exports = (function (generator) {
   
