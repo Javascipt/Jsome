@@ -18,12 +18,18 @@ if you need to use jsome as a command line, you may need to instal it globally
 
 ```bash
   $ [sudo] npm install -g jsome
-  $ jsome /path/to/your/json/file.json
 ```
 
 ## How does it work ?
 
-on your nodejs application, when you need to console.log a json object, all you need to do is to use the jsome function
+Using jsome as a command line, you need to run the following command that takes the path to your json file as argument
+
+
+```bash
+  $ jsome /path/to/your/json/file.json
+```
+
+On your nodejs application, when you need to console.log a json object, all you need to do is to use the jsome function
 
 ```javascript
     var jsome = require('jsome');
