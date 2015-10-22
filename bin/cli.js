@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+
 var path      = require("path")
   , fs        = require("fs")
   , jsome     = require("../script")
