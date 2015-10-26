@@ -33,7 +33,7 @@ var colors = {
 , generator = require("./lib/generator").setOptions(options)
 , stringify = require('json-stringify-safe');
 
-module.exports = (function (generator) {
+module.exports = (function (generator, stringify) {
   
   function jsome (json, callBack) {
     return jsome.parse(stringify(json), callBack);
@@ -60,4 +60,4 @@ module.exports = (function (generator) {
   
   return jsome;
   
-})(generator);
+})(generator, stringify);
