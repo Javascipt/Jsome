@@ -30,11 +30,18 @@ var colors = {
   , params  : params
 }
 
-, generator = require("./lib/generator").setOptions(options);
+, generator = require("./lib/generator").setOptions(options)
+, stringify = require('json-stringify-safe');
 
 module.exports = (function (generator) {
   
   function jsome (json, callBack) {
+    return jsome.parse(stringify(json), callBack);
+  }
+  
+  jsome.parse = function (jsonString, callBack) {
+    var json = JSON.parse(jsonString);
+    
     if (!jsome.params.async) {
       console.log(generator.gen(json, options.level.start));
     } else {
@@ -45,10 +52,6 @@ module.exports = (function (generator) {
     }
     
     return json;
-  }
-  
-  jsome.parse = function (jsonString, callBack) {
-    return jsome(JSON.parse(jsonString), callBack);
   }
   
   jsome.colors  = colors;
