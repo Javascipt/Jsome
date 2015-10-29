@@ -32,12 +32,14 @@ Using jsome as a command line, you need to run the following command that takes 
 The jsome command line has some options
 - `-c`: to enable or disable colors (defualt value: true)
 - `-l`: to enable or disable levels (default value: false)
+- `-s`: to specify the number of tabulation spaces (default value: 2)
 
 examples :
 
 ```bash
   jsome -c false /path/to/your/file.json
-  jsome -c false -l true /path/to/your/json
+  jsome -c false -l true /path/to/your/file.json
+  jsome -s 4 /path/to/your/file.json
 ```
 
 ####Module
