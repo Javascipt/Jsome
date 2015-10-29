@@ -21,12 +21,26 @@ if you need to use jsome as a command line, you may need to instal it globally
 
 ## How does it work ?
 
-Using jsome as a command line, you need to run the following command that takes the path to your json file as argument
+####Command line :
 
+Using jsome as a command line, you need to run the following command that takes the path to your json file as argument
 
 ```bash
   $ jsome /path/to/your/json/file.json
 ```
+
+The jsome command line has some options
+- `-c`: to enable or disable colors (defualt value: true)
+- `-l`: to enable or disable levels (default value: false)
+
+examples :
+
+```bash
+  jsome -c false /path/to/your/file.json
+  jsome -c false -l true /path/to/your/json
+```
+
+####Module
 
 On your nodejs application, when you need to console.log a json object, all you need to do is to use the jsome function
 

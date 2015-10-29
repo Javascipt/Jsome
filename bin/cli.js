@@ -5,7 +5,7 @@ var path      = require("path")
   , jsome     = require("../script");
 
 var argv = require('yargs')
-  .usage('Usage: $0 [options] <file>')
+  .usage('Usage: jsome [options] <file>')
   .option('c',{
     alias: 'colors',
     default: true,
@@ -18,8 +18,8 @@ var argv = require('yargs')
     describe: 'show indentation levels',
     type: 'boolean'
   })
-  .example('$0 -cl /some/dir/file.json', 'print out the contents of file.json in color displaying indentation levels')
-  .example('$0 -c false -l /some/dir/file.json', 'print out the contents of file.json with no color but display indentation levels')
+  .example('jsome -cl /some/dir/file.json', 'print out the content of file.json in color displaying indentation levels')
+  .example('jsome -c false -l /some/dir/file.json', 'print out the content of file.json without color but with indentation levels')
   .help('h')
   .argv;
 
