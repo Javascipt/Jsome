@@ -27,7 +27,8 @@
   "homepage": "https://github.com/Javascipt/Jsome#readme",
   "dependencies": {
     "chalk": "^1.1.1",
-    "json-stringify-safe": "^5.0.1"
+    "json-stringify-safe": "^5.0.1",
+    "yargs": "^3.29.0"
   },
   "bin": {
     "jsome": "./bin/cli.js"
