@@ -42,7 +42,7 @@ examples :
   jsome -s 4 /path/to/your/file.json
 ```
 
-##### Module
+##### Module :
 
 On your nodejs application, when you need to console.log a json object, all you need to do is to use the jsome function
 
