@@ -16,6 +16,11 @@ var argv = require('yargs')
     , default   : false
     , describe  : 'show indentation levels'
     , type      : 'boolean'
+  }).option('s', {
+      alias     : 'spaces'
+    , default   : 2
+    , describe  : 'specifying tabulation spaces'
+    , type      : 'number'
   })
   .example('jsome -cl /some/dir/file.json', 'print out the content of file.json in color displaying indentation levels')
   .example('jsome -c false -l /some/dir/file.json', 'print out the content of file.json without color but with indentation levels')
@@ -24,6 +29,7 @@ var argv = require('yargs')
 
 jsome.params.colored = argv.c;
 jsome.level.show     = argv.l;
+jsome.level.spaces   = argv.s;
 
 var filePath = argv._[0] || '';
 
