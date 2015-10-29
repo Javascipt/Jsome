@@ -21,7 +21,7 @@ if you need to use jsome as a command line, you may need to instal it globally
 
 ## How does it work ?
 
-####Command line :
+#### Command line :
 
 Using jsome as a command line, you need to run the following command that takes the path to your json file as argument
 
@@ -42,7 +42,7 @@ examples :
   jsome -s 4 /path/to/your/file.json
 ```
 
-####Module
+##### Module
 
 On your nodejs application, when you need to console.log a json object, all you need to do is to use the jsome function
 
