@@ -2,6 +2,8 @@ Make your JSON objects look AWESOME!
 ====================================
 
 ![Jsome](https://api.travis-ci.org/Javascipt/Jsome.svg)
+![Jsome](https://david-dm.org/Javascipt/Jsome.svg)
+![Jsome](https://img.shields.io/npm/dm/jsome.svg)
 
 ![Downloads stats](https://nodei.co/npm/jsome.png?downloadRank=true&stars=true)
 
