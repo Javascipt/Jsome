@@ -43,7 +43,12 @@ module.exports = (function (generator, stringify) {
     var json = JSON.parse(jsonString);
     
     if (!jsome.params.async) {
-      console.log(generator.gen(json, options.level.start));
+      var output = generator.gen(json, options.level.start);
+      if(Array.isArray(output)) {
+        console.log.apply(console, output);
+      } else {
+        console.log(output); 
+      }
     } else {
       setTimeout(function () {
         console.log(generator.gen(json, options.level.start));
