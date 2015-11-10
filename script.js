@@ -24,26 +24,25 @@ var colors = {
   , 'async'   : false
 }
 
-, options = {
-    colors  : colors 
-  , level   : level
-  , params  : params
-}
 
-, generator = require("./lib/generator").setOptions(options)
-, stringify = require('json-stringify-safe');
-
-module.exports = (function (generator, stringify) {
+module.exports = (function () {
   
   function jsome (json, callBack) {
     return jsome.parse(stringify(json), callBack);
   }
   
+  jsome.colors  = colors;
+  jsome.level   = level;
+  jsome.params  = params;
+  
+  var generator = require("./lib/generator").setJsomeRef(jsome)
+    , stringify = require('json-stringify-safe');
+  
   jsome.parse = function (jsonString, callBack) {
     var json = JSON.parse(jsonString);
     
     if (!jsome.params.async) {
-      var output = generator.gen(json, options.level.start);
+      var output = generator.gen(json, jsome.level.start);
       if(Array.isArray(output)) {
         console.log.apply(console, output);
       } else {
@@ -51,7 +50,7 @@ module.exports = (function (generator, stringify) {
       }
     } else {
       setTimeout(function () {
-        console.log(generator.gen(json, options.level.start));
+        console.log(generator.gen(json, jsome.level.start));
         callBack && callBack();
       });
     }
@@ -59,10 +58,7 @@ module.exports = (function (generator, stringify) {
     return json;
   }
   
-  jsome.colors  = colors;
-  jsome.level   = level;
-  jsome.params  = params;
   
   return jsome;
   
-})(generator, stringify);
+})();
