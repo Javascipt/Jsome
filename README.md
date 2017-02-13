@@ -171,3 +171,8 @@ The default value of `params` is:
   }
 ```
 
+In order to get the colored string without printing it on the console :
+
+```javascript
+   var coloredString = jsome.getColoredString(obj)
+```
