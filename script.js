@@ -22,6 +22,7 @@ var colors = {
 , params = {
     'colored' : true
   , 'async'   : false
+  , 'lintable': false
 }
 
 
