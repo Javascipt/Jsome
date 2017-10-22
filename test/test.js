@@ -1,5 +1,5 @@
 var assert = require('assert'),
-  mJsome = require('../script.js'),
+  jsome = require('../script.js'),
   chalk = require('chalk'),
   enc = require('jsesc'),
   y = chalk.yellow,
@@ -16,7 +16,7 @@ describe('Jsome run with', function () {
       y(', ') + y('"') + m('two') +
       y('"') + y(']') +
       '\n' + y('}')
-    var actual = mJsome.getColoredString(
+    var actual = jsome.getColoredString(
       {'string': 'value', 'list': ['one', 'two']}
     )
 
@@ -41,8 +41,8 @@ describe('Jsome run with', function () {
       y(', ') + y('"') + m('two') +
       y('"') + y(']') +
       '\n' + y('}')
-    mJsome.params.lintable = true
-    var actual = mJsome.getColoredString(
+    jsome.params.lintable = true
+    var actual = jsome.getColoredString(
       {'string': 'value', 'list': ['one', 'two']}
     )
 
@@ -55,5 +55,5 @@ describe('Jsome run with', function () {
         assert.equal(enc(actual), enc(expected))
       })
   })
-  
+
 })
