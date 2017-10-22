@@ -32,5 +32,15 @@
   },
   "bin": {
     "jsome": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "jsesc": "^2.5.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
