@@ -1,6 +1,5 @@
 var assert = require('assert'),
   mJsome = require('../script.js'),
-  escp = require('./helper').escp,
   chalk = require('chalk'),
   enc = require('jsesc'),
   y = chalk.yellow,
