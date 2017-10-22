@@ -38,6 +38,7 @@ The options available are :
 - `-c`: to enable or disable colors (defualt value: true)
 - `-l`: to enable or disable levels (default value: false)
 - `-s`: to specify the number of tabulation spaces (default value: 2)
+- `-r`: to specify valid JSON as output (default value: true)
 
 examples :
 
@@ -152,6 +153,12 @@ If you need to disable the colors:
   jsome.params.colored = false;
 ```
 
+If you need JSON which pases linting:
+
+```javascript
+  jsome.params.lintable = true;
+```
+
 When you have a very long json to display, don't make your code blocking... you can enable the asynchronous mode.
 
 ```javascript
@@ -168,6 +175,7 @@ The default value of `params` is:
   jsome.params = {
       'colored' : true
     , 'async'   : false
+    , 'lintable': false
   }
 ```
 
