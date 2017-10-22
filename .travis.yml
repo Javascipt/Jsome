@@ -6,4 +6,3 @@ node_js:
   - '4'
 before_script: npm link
 script: jsome package.json
-after_script: npm test
