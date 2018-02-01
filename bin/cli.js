@@ -39,10 +39,19 @@ jsome.level.spaces    = argv.s;
 
 var filePath = argv._[0] || '';
 
-fs.exists(path.resolve(filePath), function (exists) {
-  if(!exists) return jsome({ error : "File doesn't exists" });
-  fs.readFile(path.resolve(filePath), function (error, jsonString) {
-    if(error) return jsome ({ error : error.message });
-    jsome.parse(jsonString.toString());
+if(filePath) {
+  fs.exists(path.resolve(filePath), function (exists) {
+    if(!exists) return jsome({ error : "File doesn't exist" });
+    fs.readFile(path.resolve(filePath), function (error, jsonString) {
+      if(error) return jsome ({ error : error.message });
+      jsome.parse(jsonString.toString());
+    });
   });
-});
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding('utf8');
+
+  process.stdin.on('data', function (data) {
+    jsome(JSON.parse(data));
+  });
+}
