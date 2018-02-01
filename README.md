@@ -34,6 +34,12 @@ Using jsome as a command line, you need to run the following command that takes 
   $ jsome [options] /path/to/your/json/file.json
 ```
 
+You can also send a json string through a pipe (`|`)
+
+```bash
+  $ cat /path/to/your/json/file.json | jsome
+```
+
 The options available are :
 - `-c`: to enable or disable colors (defualt value: true)
 - `-l`: to enable or disable levels (default value: false)
