@@ -23,6 +23,7 @@ var colors = {
     'colored' : true
   , 'async'   : false
   , 'lintable': false
+  , 'maxInlineLength': 80
 }
 
 
