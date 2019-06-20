@@ -8,6 +8,11 @@ var assert = require('assert'),
 
 describe('Jsome run with', function () {
 
+  beforeEach(function () {
+    jsome.params.colored = true
+    jsome.params.maxInlineLength = 80
+  });
+
   describe('spec non-compliant coloured output', function () {
     var expected = y('{') +
       '\n  ' + g('string') + y(': ') + y('"') + m('value') + y('"') +
@@ -54,6 +59,27 @@ describe('Jsome run with', function () {
       function () {
         assert.equal(enc(actual), enc(expected))
       })
+  })
+
+  describe('decide the better array presentation', function () {
+
+    test('should not line broke a small inline array', function () {
+      jsome.params.colored = false
+      assert.equal(
+        jsome.getColoredString([1234567890, 'ABCDEFGHIJ']),
+        '[1234567890, "ABCDEFGHIJ"]'
+      )
+    })
+
+    test('should broke long inline in a multiline representation', function () {
+      jsome.params.colored = false
+      jsome.params.maxInlineLength = 20
+      assert.equal(
+        jsome.getColoredString([1234567890, 'ABCDEFGHIJ']),
+        '[\n  1234567890,\n  "ABCDEFGHIJ"\n]'
+      )
+    })
+
   })
 
 })

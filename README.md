@@ -45,6 +45,7 @@ The options available are :
 - `-l`: to enable or disable levels (default value: false)
 - `-s`: to specify the number of tabulation spaces (default value: 2)
 - `-r`: to specify valid JSON as output (default value: true)
+- `-m`: to specify the max inline representetion length of an array (default value: 80)
 
 examples :
 
@@ -165,6 +166,12 @@ If you need JSON which pases linting:
   jsome.params.lintable = true;
 ```
 
+If you need to change the max length of an inline representetion of an array
+
+```javascript
+  jsome.params.maxInlineLength = 30;
+```
+
 When you have a very long json to display, don't make your code blocking... you can enable the asynchronous mode.
 
 ```javascript
@@ -182,6 +189,7 @@ The default value of `params` is:
       'colored' : true
     , 'async'   : false
     , 'lintable': false
+    , 'maxInlineLength': 80
   }
 ```
 

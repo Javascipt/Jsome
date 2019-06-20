@@ -26,6 +26,11 @@ var argv = require('yargs')
     , default   : false
     , describe  : 'output valid json'
     , type      : 'boolean'
+  }).option('m', {
+      alias     : 'maxInlineLength'
+    , default   : 80
+    , describe  : 'the max inline representetion length of an array'
+    , type      : 'number'
 })
   .example('jsome -cl /some/dir/file.json', 'print out the content of file.json in color displaying indentation levels')
   .example('jsome -c false -l /some/dir/file.json', 'print out the content of file.json without color but with indentation levels')
@@ -34,6 +39,7 @@ var argv = require('yargs')
 
 jsome.params.colored  = argv.c;
 jsome.params.lintable = argv.r;
+jsome.params.maxInlineLength = argv.m;
 jsome.level.show      = argv.l;
 jsome.level.spaces    = argv.s;
 
