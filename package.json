@@ -28,7 +28,7 @@
   "dependencies": {
     "chalk": "^2.3.0",
     "json-stringify-safe": "^5.0.1",
-    "yargs": "^11.0.0"
+    "yargs": "^13.2.4"
   },
   "bin": {
     "jsome": "./bin/cli.js"
@@ -39,6 +39,9 @@
   "devDependencies": {
     "jest": "^21.2.1",
     "jsesc": "^2.5.1"
+  },
+  "engines": {
+    "node": ">= 8"
   },
   "jest": {
     "testEnvironment": "node"
