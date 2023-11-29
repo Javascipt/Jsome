@@ -1,6 +1,6 @@
 module.exports = (function () {
   var jsomeRef
-    , browserColors = []
+    , browserColors: string[] = []
     , browserStyle  = require('./browser-style')
   
   function getType (value) {
@@ -54,6 +54,7 @@ module.exports = (function () {
     for (var key in obj) {
       if (isArray(obj[key]) || isObject(obj[key])) return true;
     }
+    return false;
   }
   
   function isArray (arr) {
@@ -64,7 +65,7 @@ module.exports = (function () {
     return toString.call(obj).match(/^\[object Object\]$/);
   }
   
-  function colorify (value, level) {
+  function colorify (value, level = 0) {
     var color = jsomeRef.colors[getType(value)];
     return generateLevel(level) 
       + (getType(value) === 'str' ? colorifySpec('"', 'quot') : '')
@@ -72,7 +73,7 @@ module.exports = (function () {
       + (getType(value) === 'str' ? colorifySpec('"', 'quot') : '');
   }
   
-  function colorifySpec (char, type, level) {
+  function colorifySpec (char, type, level = 0): string {
     var quote = (
       jsomeRef.params.lintable && type === 'attr'
         ? colorifySpec('"', 'quot', 0)
@@ -109,7 +110,7 @@ module.exports = (function () {
   
   return {
     gen : function (json, level, isChild) {
-      var colored = [];
+      var colored: string[] = [];
           level   = level || 0;
       
       if (isObject(json)) {
@@ -133,19 +134,19 @@ module.exports = (function () {
         
         if (hasChild(json)) {
           
-          var result = json.map(function(item) {
+          var arr = json.map(function(item) {
             return this.gen(item, level+1);
           }.bind(this));
           
           colored.push(colorifySpec('[', 'brack', isChild ? 0 : level));;
-          colored.push(result.join(colorifySpec(', ', 'punc') + '\n' ));
+          colored.push(arr.join(colorifySpec(', ', 'punc') + '\n' ));
           colored.push(colorifySpec(']', 'brack', level));
           
         } else {
           
           var coloredArray = colorifySpec('[', 'brack', isChild ? 0 : level);
-          for (var key in json) {
-            coloredArray += colorify(json[key]) + (json.length-1>key ? colorifySpec(', ', 'punc') : '');
+          for (var i = 0; i < json.length; i++) {
+            coloredArray += colorify(json[i]) + (json.length - 1 > i ? colorifySpec(', ', 'punc') : '');
           }
           colored.push(coloredArray + colorifySpec(']', 'brack'));
           
